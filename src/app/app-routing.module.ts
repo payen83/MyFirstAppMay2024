@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'waktu-solat',
+    loadChildren: () => import('./waktu-solat/waktu-solat.module').then( m => m.WaktuSolatPageModule)
+  },
 ];
 
 @NgModule({

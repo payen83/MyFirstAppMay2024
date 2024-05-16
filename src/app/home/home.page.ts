@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public alertController: AlertController) {}
+
+  btnAlertOld(){
+    alert('Selamat Datang!!');
+  }
+
+  async btnAlert() {
+    const alert = await this.alertController.create({
+      header: 'Pengumuman',
+      message: 'Anda berjaya!',
+      buttons: ['Tutup mesej'],
+    });
+
+    await alert.present();
+  }
+  
 
 }
